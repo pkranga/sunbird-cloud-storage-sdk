@@ -34,7 +34,7 @@ object AppConf {
     def getStorageKey(`type`: String): String = {
         if (`type`.equals("aws")) getConfig("aws_storage_key");
         else if (`type`.equals("azure")) getConfig("azure_storage_key");
-        else if((`type`.equals("cephs3")) getConfig("cephs3_storage_key");)
+        else if (`type`.equals("cephs3")) getConfig("cephs3_storage_key");
         else "";
     }
 
