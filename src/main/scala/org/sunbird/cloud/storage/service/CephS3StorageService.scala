@@ -10,7 +10,7 @@ import java.util.Properties
 
 class CephS3StorageService(config: StorageConfig) extends BaseStorageService {
 
-    var context = ContextBuilder.newBuilder("s3").endpoint(config.endPoint.get).credentials(config.storageKey, config.storageSecret).buildView(classOf[BlobStoreContext])
+    var context = ContextBuilder.newBuilder("s3").endpoint("https://staas-bbs1.cloud.gov.in").credentials(config.storageKey, config.storageSecret).buildView(classOf[BlobStoreContext])
     var blobStore = context.getBlobStore
 
     override def getPaths(container: String, objects: List[Blob]): List[String] = {
