@@ -14,6 +14,7 @@ import org.jclouds.blobstore.options.ListContainerOptions.Builder.{afterMarker, 
 import org.sunbird.cloud.storage.Model.Blob
 import org.jclouds.blobstore.options.{CopyOptions, PutOptions}
 import org.sunbird.cloud.storage.conf.AppConf
+import org.jclouds.blobstore.domain.BlobAccess
 
 import scala.collection.mutable.ListBuffer
 import scala.concurrent.{ExecutionContext, Future}
