@@ -73,7 +73,7 @@ trait BaseStorageService extends IStorageService {
                 val payload = Files.asByteSource(fileObj)
                 val  contentType = tika.detect(fileObj)
                 val blob = blobStore.blobBuilder(objectKey).payload(payload).contentType(contentType).contentEncoding("UTF-8").contentLength(payload.size()).build()
-                blobStore.putBlob(container, blob, new PutOptions().multipart())
+                blobStore.putBlob(container, blob, new PutOptions().multipart()setBlobAccess(BlobAccess.PUBLIC_READ))
                 if (ttl.isDefined) {
                     getSignedURL(container, objectKey, Option(ttl.get))
                 } else
